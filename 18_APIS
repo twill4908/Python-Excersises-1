@@ -1,0 +1,26 @@
+#APIS and search abut restful APIS
+
+import requests 
+r = requests.get("https://opentdb.com/api.php?amount=10&category=12&difficulty=easy&type=multiple")
+r.status_code
+r.text
+
+
+import json
+question = json.loads(r.text)
+print(question)
+type(question)
+
+import pprint
+pprint.pprint(question)
+
+
+question['results'][0]['category']
+
+question['results'][0]['incorrect_answers']
+
+#creatig python dictionary to Json
+person = {'Name': 'John', 'Age': 30}
+person_json =json.dumps(person)
+person_json
+
